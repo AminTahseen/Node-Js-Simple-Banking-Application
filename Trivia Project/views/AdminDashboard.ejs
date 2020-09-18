@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <% include partials/head %>
+  </head>
+  <body>
+    <% include partials/navigationLoggedInAdmin.ejs %>    
+    <br/>
+
+    <div class="container">
+      
+      <h2> <img src="../public/images/icons8_administrative_tools_52px.png" class="img-responsive">
+         Admin Dashboard </h2>
+      <p>Welcome to website admin panel.</p>
+      <hr/>
+
+      <div class="card bg-dark text-white">
+        <img class="card-img" src="../public/images/image1.jpg" alt="Card image" height="400px" style="opacity: 0.5;">
+        <div class="card-img-overlay" style="padding: 120px; ">
+          <p class="card-text">Online Banking</p>
+          <h2 class="card-title">Welcome Admin</h2>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text">Last updated 3 mins ago</p>
+        </div>
+      </div>
+<br/>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card  bg-primary text-white">
+            <div class="card-body">
+              <h5 class="card-title">Create A Main Customer Account</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="/admin/CreateCustomerAccount" class="btn btn-dark">Go Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card bg-dark text-white">
+            <div class="card-body">
+              <h5 class="card-title">Create An Admin Account</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="/admin/CreateAccount" class="btn btn-primary">Go Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+
+
+    <% include partials/footer.ejs %>
+
+    <% include partials/scripts %> 
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <% include partials/head %>
+  </head>
+  <body>
+    <% include partials/navigationLoggedInAdmin.ejs %>    
+    <br/>
+    <br/>
+    <div class="container">
+      <h3>Create Account Holder</h3>
+      <p>Fill the account details bellow.</p>
+      <hr/>
+        <p class="text-success"><%=message %></p> 
+   <br/>
+      <form method="POST" action="/admin/CreateAccountHolder">
+        <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Account Holder ID</label>
+            <div class="col-sm-10">
+              <input type="text" name="Account_HolderID" value="" required class="form-control" id="inputPassword" placeholder="Account Holder ID">
+              <small id="passwordHelpBlock" class="form-text text-muted">
+                Account holder id must be alpha-numeric (Ex format : ALPHABETS-NUMERIC-NUMERIC) 
+              </small>
+            </div>
+          </div>
+      <div class="form-group row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Holder CNIC</label>
+        <div class="col-sm-10">
+          <input type="text" name="Holder_CNIC" value="<%=data %>" readonly required class="form-control" id="inputPassword" placeholder="Holder CNIC">
+        </div>
+      </div>
+     <div class="form-group row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Account Description</label>
+        <div class="col-sm-10">
+          <input type="text" name="Account_Description" value="" required class="form-control" id="inputPassword" placeholder="Account Description">
+        </div>
+      </div>
+    <div class="form-group row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Account Balance</label>
+        <div class="col-sm-10">
+          <input type="number" value="" name="Account_Balance"  required class="form-control"  placeholder="0.0" >
+        </div>
+      </div>
+     <br/>
+     <button type="submit" class="btn btn-dark btn-lg" style="padding:15px; background-color: #27ae60; border:none;">Create Account</button>  
+    </form> 
+
+    </div>
+    <% include partials/footer.ejs %>
+
+    <% include partials/scripts %> 
+  </body>
+</html>

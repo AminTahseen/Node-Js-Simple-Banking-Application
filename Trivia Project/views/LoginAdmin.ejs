@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <% include partials/head %>
+</head>
+
+<body>
+  <% include partials/navigation.ejs %>
+
+  <br />
+  <br />
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <div class="card" style="width:500px; border: none;">
+
+        <div class="card-body">
+          <div class="text-center">
+            <img src="../public/images/icons8_bank_240px_1.png" class="img-responsive" width="60px" height="60px">
+            <br/>
+            <h1>LOGIN</h1>
+            <p>Sign in as administrator.</p>
+          </div>
+          <br />
+          
+          <div class="text-center">
+            <p class="text-danger"><%=message %></p> 
+          </div>
+          <form action="/admin/verifyAdmin" method="POST">
+            <div class="form-group">
+              <input type="text" style="background-color:#dcdde1;padding:15px; " class="form-control form-control-lg"
+                id="formGroupExampleInput" placeholder="Admin CNIC" required name="Admin_CNIC">
+            </div>
+            <div class="form-group">
+              <input type="password" style="background-color:#dcdde1;padding:15px;" class="form-control form-control-lg"
+                id="passInput" placeholder="Admin Password" required name="Admin_password">
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onclick="ShowPassword()">
+                <label class="form-check-label" for="defaultCheck1">
+                  Show password
+                </label>
+              </div>
+
+            </div>
+            <br />
+
+            <button type="submit" class="btn btn-dark btn-lg"
+              style="width:100%; padding:15px; background-color: #27ae60; border:none;">Login Now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <% include partials/footer.ejs %>
+
+  <% include partials/scripts %>
+</body>
+
+</html>

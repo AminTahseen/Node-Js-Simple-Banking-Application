@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <% include partials/head %>
+  </head>
+  <body>
+    <% include partials/navigationLoggedInAdmin.ejs %>    
+    <br/>
+    <br/>
+    <div class="container">
+           <div class="d-flex justify-content-center">
+            <div class="card" style="width:500px; border: none;">
+               
+                <div class="card-body">
+                    <div class="text-center">
+                        <h3>Create Customer Account</h3>
+                        <p>Fill in the details to create your account.</p>
+                    </div>
+                    <br/>
+                    <div class="text-center">
+                        <p class="text-success"><%=message %></p> 
+                    </div>
+                    <form method="POST" action="/admin/MakeCustomerAccount">
+                      <div class="form-group">
+                        <input type="text" name="Customer_name" style="background-color:#dcdde1;padding:15px; " class="form-control form-control-lg" id="formGroupExampleInput" placeholder="Customer Full Name" required>
+                      </div>
+                     <div class="form-group">
+                       <input type="text" name="Customer_CNIC" style="background-color:#dcdde1;padding:15px; " class="form-control form-control-lg" id="formGroupExampleInput" placeholder="Customer CNIC" required>
+                     </div>
+                     <div class="form-group">
+                      <input type="text" name="Customer_From" style="background-color:#dcdde1;padding:15px; " class="form-control form-control-lg" id="formGroupExampleInput" placeholder="Customer From" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" name="Customer_status" style="background-color:#dcdde1;padding:15px; " class="form-control form-control-lg" id="formGroupExampleInput" value="Active" readonly>
+                    </div>
+                    <div class="form-group">
+                       <input type="password" name="Customer_password" style="background-color:#dcdde1;padding:15px;" class="form-control form-control-lg" id="passInput" placeholder="Customer Password"  pattern=".{8,12}" required>
+                     </div>
+                     <div class="d-flex justify-content-between">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onclick="ShowPassword()">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Show password
+                            </label>
+                          </div>
+                    </div>
+                     <br/>
+                     <button type="submit" class="btn btn-dark btn-lg" style="width:100%; padding:15px; background-color: #27ae60; border:none;">Create Customer</button>  
+                    </form> 
+                    <br/>
+                </div>
+              </div>
+           </div>
+    </div>
+    <% include partials/footer.ejs %>
+
+    <% include partials/scripts %> 
+  </body>
+</html>

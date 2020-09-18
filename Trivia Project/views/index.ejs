@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <% include partials/head %>
+  </head>
+  <body>
+    <% include partials/navigation.ejs %>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active" style="background-image:url('../public/images/image1.jpg'); background-size: cover;">
+     <div class="container" style="padding: 100px; opacity: 0.8;">
+      <div class="jumbotron" style="background:black; color:white; z-index: 1;">
+        <h1 class="display-4">Online Banking For You !</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="/login" role="button">Sign in</a>
+        </p>
+      </div>
+     </div>
+        </div>
+        <div class="carousel-item" style="background-image:url('../public/images/image1.jpg'); background-size: cover;">
+          <div class="container" style="padding: 100px; opacity: 0.8;">
+            <div class="jumbotron" style="background: black; color:white;">
+              <h1 class="display-4">Something About Us !</h1>
+              <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+              <hr class="my-4">
+              <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+              <p class="lead">
+                <a class="btn btn-primary btn-lg" href="/About" role="button">Learn more</a>
+              </p>
+            </div>
+           </div>
+        </div>
+        <div class="carousel-item" style="background-image:url('../public/images/image1.jpg'); background-size: cover;">
+          <div class="container" style="padding: 100px; opacity: 0.8;">
+            <div class="jumbotron" style="background: black; color:white;">
+              <h1 class="display-4">Why not be a part ?</h1>
+              <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+              <hr class="my-4">
+              <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+              <p class="lead">
+                <a class="btn btn-primary btn-lg" href="/Login" role="button">Join Us</a>
+              </p>
+            </div>
+           </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    
+    <br/>
+
+
+    <div class="container">
+      <H3>What we offer</H3>
+      <hr/>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Perfect Banking</h5>
+              <p class="card-text">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type
+                specimen book.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Effective Security</h5>
+              <p class="card-text">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type
+                specimen book.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+<br/>
+
+<div class="row" style="background-color: #34495e; color:white; padding: 10px;">
+  <div class="col-sm-4">
+<img src="../public/images/image1.jpg" class="img-thumbnail"/>
+  </div>
+  <div class="col-sm-8">
+    <h3>Why Us ?</h3>
+    <br/>
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+      when an unknown printer took a galley of type and scrambled it to make a type
+      specimen book. It has survived not only five centuries, but also the leap 
+      into electronic typesetting, remaining essentially unchanged. It was 
+      popularised in the 1960s with the release of Letraset sheets containing 
+      Lorem Ipsum passages, and more recently with desktop publishing software 
+      like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+  </div>
+</div>
+
+    </div>
+
+
+    <% include partials/footer.ejs %>
+
+    <% include partials/scripts %> 
+  </body>
+</html>

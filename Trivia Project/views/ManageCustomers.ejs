@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <% include partials/head %>
+  </head>
+  <body>
+    <% include partials/navigationLoggedInAdmin.ejs %>    
+    <br/>
+    <br/>
+    <div class="container">
+        <div class="card bg-dark text-white">
+            <img class="card-img" src="../public/images/image1.jpg" alt="Card image" height="300px" style="opacity: 0.5;">
+            <div class="card-img-overlay" style="padding: 50px; ">
+              <h3 class="card-title">Customer Manage</h3>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text">Manage customers here</p>
+              <br/>
+              <a href="/admin/CreateCustomerAccount" class="btn btn-success">New Customer</a>
+            </div>
+          </div>
+          <br/>
+        <div class="card ">
+        <div class="card-header bg-dark text-white">
+          <h5>Customer List</h5>
+        </div>
+        <div class="card-body" style="padding:0;">
+            <div class="table table-responsive">
+                <table class="table table-bordered table-hover" style="display:block; height:300px;overflow-y : scroll;">
+                    <thead>
+                      <tr>
+                        <th>_id</th>
+                        <th>Customer name</th>
+                        <th>Customer CNIC</th>
+                        <th>Customer From</th>
+                        <th>Customer Password</th>
+                        <th>Customer Status</th>
+                        <th>Details</th>
+                        <th>Account</th>
+                        <th>Accounts Holder</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <% data.forEach(function(user) { %>
+                      <tr>
+                        <td><%=user._id %></td>
+                        <td><%=user.Customer_name %></td>
+                        <td><%=user.Customer_CNIC %></td>
+                        <td><%=user.Customer_From %></td>
+                        <td><%=user.Customer_password %></td>
+                        <td><%=user.Customer_status %></td>
+                        <td>
+                            <form method="get" action="/admin/EditCustomer/<%=user._id %>">
+                                <input type="submit" value="Edit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"/>
+                            </form>
+                        </td>
+                        <td>
+                            <form method="POST" action="/admin/InactiveCustomer/<%=user._id %>">
+                                <input type="submit" value="Inactive" class="btn btn-danger"/>
+                            </form>
+                        </td>
+                        <td>
+                          <form method="GET" action="/admin/GetAccountHolderForm/<%=user.Customer_CNIC %>">
+                              <input type="submit" value="Accounts Holder" class="btn btn-success"/>
+                          </form>
+                      </td>
+                      </tr>
+                      <% }); %>
+                    </tbody>
+                  </table>
+            </div>
+            
+        </div>
+      </div>
+
+    </div>
+    <% include partials/footer.ejs %>
+
+    <% include partials/scripts %> 
+  </body>
+</html>

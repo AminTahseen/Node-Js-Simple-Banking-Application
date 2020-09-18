@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <% include partials/head %>
+  </head>
+  <body>
+    <% include partials/navigationLoggedInAdmin.ejs %>    
+    <br/>
+    <br/>
+    <div class="container">
+        <div class="card bg-dark text-white">
+            <img class="card-img" src="../public/images/image1.jpg" alt="Card image" height="200px" style="opacity: 0.5;">
+            <div class="card-img-overlay" style="padding: 50px; ">
+              <h3 class="card-title">Account Holder Manage</h3>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text">Manage customers here</p>
+            </div>
+          </div>
+          <br/>
+        
+
+          <div class="card ">
+            <div class="card-header bg-dark text-white">
+              <h5>Customers account holders list</h5>
+            </div>
+            <div class="card-body" style="padding:0;">
+                <div class="table table-responsive">
+                    <table class="table table-bordered table-hover" style="display:block; height:300px;overflow-y : scroll;">
+                        <thead>
+                          <tr>
+                            <th>_id</th>
+                            <th>Account Holder ID</th>
+                            <th>Customer CNIC</th>
+                            <th>Account Description</th>
+                            <th>Total Balance</th>
+                            <th>&nbsp;</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <% data.forEach(function(holder) { %>
+                          <tr>
+                            <td><%=holder._id %></td>
+                            <td><%=holder.Account_HolderID %></td>
+                            <td>
+                                <form method="GET" action="/admin//GetCustomerByCNIC/<%=holder.Holder_CNIC %>">
+                                    <input type="submit" value="<%=holder.Holder_CNIC %>" class="btn btn-link"/>
+                                </form>
+                            </td>
+                            <td><%=holder.Account_Description %></td>
+                            <td>Rs. <%=holder.Account_Balance %> /PKR </td>
+                            <td>
+                                <form method="GET" action="/admin/DeleteHolderAccount/<%=holder._id %>">
+                                    <input type="submit" value="Delete" class="btn btn-danger"/>
+                                </form>
+                            </td>
+                          </tr>
+                          <% }); %>
+                        </tbody>
+                      </table>
+                </div>
+                
+            </div>
+          </div>
+
+    </div>
+    <% include partials/footer.ejs %>
+
+    <% include partials/scripts %> 
+  </body>
+</html>

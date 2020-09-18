@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <% include partials/head %>
+</head>
+
+<body>
+  <% include partials/navigationLoggedIn.ejs %>
+  <br />
+
+  <div class="container">
+    <h3>User Transaction</h3>
+    <p>Make sure to fill in the boxes with correct data for a successful transaction.</p>
+    <hr />
+    <br />
+<%=message %>
+    <form method="POST" action="/users/ProceedtoTransaction">
+      <div class="card">
+        <div class="card-body text-dark">
+            <p class="card-title">Customer CNIC</p>
+            <div class="form-group">
+              <input type="text" name="Customer_CNIC" style="background-color:#dcdde1;padding:15px; "
+                class="form-control " id="formGroupExampleInput" placeholder="Customer From" required
+                value="<%=data.Holder_CNIC %>" readonly>
+            </div>
+
+            <div class="form-row">
+              <div class="col">
+                <p class="card-title">Customer Card No.</p>
+                <input type="text" name="From_Whom_card_no" style="background-color:#dcdde1;padding:15px; "
+                  class="form-control " id="formGroupExampleInput" placeholder="Customer From" required
+                  value="<%=data.Account_HolderID %>" readonly>
+              </div>
+              <div class="col">
+                <p class="card-title">Receiver Card No.</p>
+                <input type="text" name="To_Whom_card_no" style="background-color:#dcdde1;padding:15px; "
+                  class="form-control" id="formGroupExampleInput" placeholder="Receiver Account Holder ID" required
+                  value="">
+              </div>
+            </div>
+            <br />
+
+            <div class="form-row">
+              <div class="col">
+                <p class="card-title">Card Balance.</p>
+                <input type="number" name="Sender_card_amount" style="background-color:#dcdde1;padding:15px; "
+                  class="form-control" id="formGroupExampleInput" placeholder="Customer From" required
+                  value="<%=data.Account_Balance %>" readonly>
+              </div>
+              <div class="col">
+                <p class="card-title">Transaction Amount.</p>
+                <input type="number" name="Transaction_Amount" style="background-color:#dcdde1;padding:15px; "
+                  class="form-control" id="formGroupExampleInput" placeholder="Transaction Amount" required value="">
+              </div>
+
+            </div>
+
+            <input type="submit" value="Start Transaction" class="btn btn-primary btn-sm" />
+
+          
+
+        </div>
+
+      </div>
+    </form>
+
+  </div>
+
+
+  <% include partials/footer.ejs %>
+
+  <% include partials/scripts %>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <% include partials/head %>
+  </head>
+  <body>
+    <% include partials/navigationLoggedIn.ejs %>    
+    <br/>
+
+    <div class="container">
+        
+        <h3>Customer Balance</h3>
+        <p>Total Balance of Accounts which are been hold by you.</p>
+        <hr/>
+        <br/>
+        
+        <div class="card bg-dark text-white">
+          <img class="card-img" src="../public/images/image1.jpg" alt="Card image" height="250px" style="opacity: 0.5;">
+          <div class="card-img-overlay" style="padding: 50px; ">
+            <h3 class="card-title">Total Balance : Rs. <%=balance %> / pkr</h3>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text">some line</p>
+          </div>
+        </div>
+
+    </div>
+
+
+    <% include partials/footer.ejs %>
+
+    <% include partials/scripts %> 
+  </body>
+</html>

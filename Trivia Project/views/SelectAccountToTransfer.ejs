@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <% include partials/head %>
+  </head>
+  <body>
+    <% include partials/navigationLoggedIn.ejs %>    
+    <br/>
+
+    <div class="container">
+        
+        <h3>Select an account</h3>
+        <p>These Account are been hold by you.</p>
+        <hr/>
+        <br/>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card bg-dark text-white">
+                    <img class="card-img" src="../public/images/image1.jpg" alt="Card image" height="250px" style="opacity: 0.5;">
+                    <div class="card-img-overlay" style="padding: 50px; ">
+                      <h3 class="card-title">Transfer Balance</h3>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text">Transfer balance here</p>
+                    </div>
+                  </div>
+
+
+                  <br/>
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Note :</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">For a successful transaction </h6>
+                      <p class="card-text">Make sure to fill in the boxes with correct data for a successful transaction.</p>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col-sm-6">
+                <table class="table table-hover" style="display:block; height:420px;overflow-y : scroll;">
+                    <thead class="bg-dark text-white">
+                      <tr>
+                        <th scope="col">Account Cards</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% data.forEach(function(holder) { %>
+
+                        <tr>
+                          <td>
+                           
+                            <div class="card">
+                              <div class="card-body text-white">
+                                <img class="card-img" src="../public/images/creditCardBG.png" alt="Card image" height="200px" style="opacity: 0.8;">
+                                <div class="card-img-overlay" style="padding: 50px; ">
+                                  <h4 class="card-title"><%=holder.Account_HolderID %></h4>
+                                  <h6 class="card-subtitle mb-2 text-muted">HOLDER CNIC : <%=holder.Holder_CNIC %></h6>
+                                  <p class="card-text"><b>BALANCE - Rs. <%=holder.Account_Balance %> /pkr</b></p>
+                                  
+                                    <form method="GET" action="/users/GotoTransaction/<%=holder._id %>">
+                                        <input type="submit" value="Transaction" class="btn btn-success"/>
+                                    </form>
+                                </div>
+                              </div>
+                            </div>
+                          
+                          </td>
+  
+            
+                        </tr>
+
+                      <% }); %>
+
+                    </tbody>
+                  </table>
+            </div>
+          </div>
+
+    </div>
+
+
+    <% include partials/footer.ejs %>
+
+    <% include partials/scripts %> 
+  </body>
+</html>
